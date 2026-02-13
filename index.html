@@ -7,23 +7,22 @@
     <script src="https://cdn.tailwindcss.com"></script>
     <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+Sinhala:wght@400;700&display=swap" rel="stylesheet">
     <style>
-        :root { --gold: #c5a059; --dark: #1a0808; }
+        :root { --gold: #c5a059; }
         body { font-family: 'Noto Sans Sinhala', sans-serif; background-color: #f9f6f0; }
         .hero {
             background: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)), 
-                        url('https://i.ytimg.com/vi/7h2-TqfR7pI/hqdefault.jpg');
+                        url('https://images1-focus-opensocial.googleusercontent.com/gadgets/proxy?container=focus&refresh=2592000&url=https://i.ytimg.com/vi/7h2-TqfR7pI/hqdefault.jpg');
             background-size: cover; background-position: center; background-attachment: fixed;
             min-height: 50vh; display: flex; align-items: center; justify-content: center;
         }
         .video-card { background: white; border-radius: 20px; overflow: hidden; transition: 0.4s; border: 1px solid #eee; }
         .video-card:hover { transform: translateY(-10px); box-shadow: 0 20px 40px rgba(197, 160, 89, 0.3); }
         .gold-btn { background: var(--gold); transition: 0.3s; }
-        .gold-btn:hover { background: #8e6d2d; transform: scale(1.05); }
     </style>
 </head>
 <body>
 
-    <nav class="bg-white/90 backdrop-blur-md sticky top-0 z-50 border-b border-gold/20 p-4">
+    <nav class="bg-white/90 backdrop-blur-md sticky top-0 z-50 border-b border-gold/20 p-4 shadow-sm">
         <div class="container mx-auto flex justify-between items-center">
             <div class="flex items-center gap-3">
                 <div class="w-10 h-10 bg-gradient-to-br from-[#c5a059] to-[#8e6d2d] rounded-full flex items-center justify-center text-white font-bold">අ</div>
@@ -33,10 +32,10 @@
         </div>
     </nav>
 
-    <header class="hero text-center text-white p-6">
+    <header class="hero text-center text-white p-6 shadow-inner">
         <div>
             <h2 class="text-4xl md:text-6xl font-bold mb-4">අභිධම්ම දහර</h2>
-            <p class="text-lg md:text-xl italic text-orange-100">"සියලු දානයන්ට වඩා ධර්ම දානය උතුම් වන්නේය"</p>
+            <p class="text-lg md:text-xl italic text-orange-100 italic">"සබ්බ දානං ධම්ම දානං ජිනාති"</p>
         </div>
     </header>
 
@@ -53,31 +52,33 @@
                     {id: '3-7hE0XvX_Y', t: 'විශේෂ ධර්ම සාකච්ඡා සහ ගැටළු විසඳීම'}
                 ];
 
-                document.write(vids.map(v => `
+                document.write(vids.map(v => {
+                    // Using Google Proxy to bypass GitHub security blocks
+                    const proxyUrl = `https://images1-focus-opensocial.googleusercontent.com/gadgets/proxy?container=focus&refresh=2592000&url=https://i.ytimg.com/vi/${v.id}/hqdefault.jpg`;
+                    
+                    return `
                     <div class="video-card group">
                         <a href="https://www.youtube.com/watch?v=${v.id}" target="_blank">
-                            <img src="https://i.ytimg.com/vi/${v.id}/hqdefault.jpg" 
-                                 class="w-full aspect-video object-cover" 
-                                 alt="Dhamma Video">
+                            <img src="${proxyUrl}" class="w-full aspect-video object-cover" alt="Dhamma Video">
                             <div class="p-6">
                                 <h4 class="font-bold text-lg text-gray-800 group-hover:text-[#c5a059] transition-colors h-14 overflow-hidden mb-4">${v.t}</h4>
                                 <div class="flex justify-between items-center pt-4 border-t border-gray-50">
-                                    <span class="text-xs text-gray-400">Abhidhamma Dahara</span>
+                                    <span class="text-xs text-gray-400 font-bold uppercase tracking-widest">Dhamma Dahara</span>
                                     <span class="text-[#c5a059] font-bold text-xs">Watch Now →</span>
                                 </div>
                             </div>
                         </a>
                     </div>
-                `).join(''));
+                `}).join(''));
             </script>
 
         </div>
     </main>
 
-    <footer class="bg-[#1a0808] text-white py-16 text-center border-t-4 border-[#c5a059]">
-        <h2 class="text-2xl font-bold text-[#c5a059] mb-4 uppercase tracking-widest">අභිධම්ම දහර</h2>
-        <p class="text-gray-400 text-sm max-w-md mx-auto mb-8 px-6">පරම පවිත්‍ර ශ්‍රී සද්ධර්මය ලෝකවාසී සැදැහැවතුන් අතරේ ප්‍රචලිත කිරීම අපගේ අරමුණයි.</p>
-        <div class="text-[10px] opacity-40 uppercase tracking-[0.4em]">© 2026 Abhidhamma Dahara</div>
+    <footer class="bg-[#1a0808] text-white py-16 text-center border-t-8 border-[#c5a059]">
+        <h2 class="text-2xl font-bold text-[#c5a059] mb-4">අභිධම්ම දහර</h2>
+        <p class="text-gray-400 text-sm max-w-md mx-auto mb-8 px-6">සබ්බේ සත්තා භවන්තු සුඛිතත්තා!</p>
+        <div class="text-[10px] opacity-40 uppercase tracking-[0.4em]">© 2026 Abhidhamma Dahara Official</div>
     </footer>
 
 </body>
