@@ -5,58 +5,157 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>අභිධම්ම දහර | Abhidhamma Dahara</title>
     <script src="https://cdn.tailwindcss.com"></script>
-    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+Sinhala:wght@400;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+Sinhala:wght@100;400;700&family=Abhaya+Libre:wght@400;700&display=swap" rel="stylesheet">
     <style>
-        body { font-family: 'Noto Sans Sinhala', sans-serif; background-color: #fdfbf7; color: #4a3728; }
-        .gold-text { color: #b8860b; }
-        .video-card { background: white; border: 1px solid #eaddca; transition: 0.3s; height: 100%; }
-        .video-card:hover { transform: translateY(-5px); box-shadow: 0 10px 25px rgba(184,134,11,0.25); border-color: #b8860b; }
-        .btn-subscribe { background-color: #b8860b; transition: 0.3s; }
-        .btn-subscribe:hover { background-color: #8b6508; transform: scale(1.05); }
+        :root {
+            --gold: #c5a059;
+            --dark-gold: #8e6d2d;
+            --deep-maroon: #2d0a0a;
+            --soft-cream: #f9f6f0;
+        }
+        body { 
+            font-family: 'Noto Sans Sinhala', sans-serif; 
+            background-color: var(--soft-cream);
+            color: #333;
+        }
+        .gold-gradient {
+            background: linear-gradient(135deg, #c5a059 0%, #8e6d2d 100%);
+        }
+        .text-gold { color: var(--gold); }
+        
+        /* Banner Animation */
+        .hero {
+            background: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)), 
+                        url('https://img.youtube.com/vi/7h2-TqfR7pI/maxresdefault.jpg');
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
+            min-height: 70vh;
+        }
+
+        .video-card {
+            background: white;
+            border-bottom: 4px solid transparent;
+            transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+        .video-card:hover {
+            border-bottom: 4px solid var(--gold);
+            transform: translateY(-10px);
+            box-shadow: 0 25px 50px -12px rgba(197, 160, 89, 0.3);
+        }
+        
+        .subscribe-btn {
+            background: var(--gold);
+            box-shadow: 0 10px 20px -5px rgba(197, 160, 89, 0.5);
+        }
+
+        .floating-logo {
+            filter: drop-shadow(0 0 10px rgba(197, 160, 89, 0.4));
+        }
     </style>
 </head>
 <body>
 
-    <nav class="bg-white/90 backdrop-blur-sm border-b border-[#eaddca] sticky top-0 z-50">
+    <nav class="bg-white/90 backdrop-blur-lg border-b border-[#eaddca] sticky top-0 z-50">
         <div class="container mx-auto px-6 py-4 flex justify-between items-center">
-            <h1 class="text-2xl font-bold gold-text tracking-tighter">අභිධම්ම දහර</h1>
-            <a href="https://www.youtube.com/channel/UCdwr_BIzFErVpm2Axoi_0yA?sub_confirmation=1" target="_blank" class="btn-subscribe text-white px-6 py-2 rounded-full font-bold text-sm shadow-md">Subscribe</a>
+            <div class="flex items-center gap-4">
+                <img src="https://www.gstatic.com/youtube/img/branding/youtubelogo/svg/youtubelogo.svg" class="w-8 opacity-20 absolute -z-10">
+                <div class="w-14 h-14 bg-gradient-to-br from-[#c5a059] to-[#8e6d2d] rounded-full p-1 floating-logo">
+                    <div class="bg-white w-full h-full rounded-full flex items-center justify-center font-bold text-xl text-[#8e6d2d]">අ</div>
+                </div>
+                <div>
+                    <h1 class="text-2xl font-bold tracking-tighter text-[#2d0a0a]">අභිධම්ම දහර</h1>
+                    <p class="text-[10px] uppercase tracking-[0.3em] text-gold font-bold">The Path of Dhamma</p>
+                </div>
+            </div>
+            <a href="https://www.youtube.com/channel/UCdwr_BIzFErVpm2Axoi_0yA?sub_confirmation=1" target="_blank" class="subscribe-btn text-white px-8 py-3 rounded-full font-bold text-sm hover:brightness-110 transition-all">SUBSCRIBE</a>
         </div>
     </nav>
 
-    <header class="py-20 text-center bg-white border-b border-[#eaddca]">
-        <div class="container mx-auto px-4">
-            <h2 class="text-4xl md:text-6xl font-bold mb-6 gold-text">අභිධම්ම දහර</h2>
-            <p class="text-lg md:text-xl text-gray-600 max-w-2xl mx-auto leading-relaxed italic">
-                "සබ්බ දානං ධම්ම දානං ජිනාති"<br>
-                පරම පවිත්‍ර ශ්‍රී සද්ධර්මය සරලව සහ පැහැදිලිව ඉගෙනීමට පිවිසෙන්න.
+    <header class="hero flex items-center justify-center text-center px-4 relative overflow-hidden">
+        <div class="absolute inset-0 bg-black/40"></div>
+        <div class="relative z-10 max-w-4xl">
+            <h2 class="text-white text-5xl md:text-8xl font-bold mb-6 tracking-tight drop-shadow-2xl">අභිධම්ම දහර</h2>
+            <div class="h-1.5 w-40 bg-gradient-to-r from-transparent via-[#c5a059] to-transparent mx-auto mb-8"></div>
+            <p class="text-orange-100 text-xl md:text-3xl font-light italic leading-relaxed">
+                "ධර්ම දානය සියලු දානයන්ට වඩා උතුම් වන්නේය"<br>
+                <span class="text-sm md:text-lg not-italic opacity-80 mt-4 block uppercase tracking-widest font-bold">සරලව ඉගෙන ගන්නා පරම පවිත්‍ර අභිධර්මය</span>
             </p>
         </div>
     </header>
 
-    <main class="container mx-auto px-6 py-16">
-        <h3 class="text-2xl font-bold mb-10 border-l-4 border-[#b8860b] pl-4 gold-text uppercase">නවතම ධර්ම දේශනා</h3>
+    <main class="container mx-auto px-6 py-24">
+        <div class="mb-20 text-center">
+            <span class="text-gold font-bold uppercase tracking-[0.5em] text-sm">Disciple of Dhamma</span>
+            <h3 class="text-4xl font-bold text-[#2d0a0a] mt-2">ධර්ම දේශනා සහ පාඩම් මාලා</h3>
+            <div class="w-20 h-1 bg-[#c5a059] mx-auto mt-4"></div>
+        </div>
         
-        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10">
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-12">
             
-            <div class="video-card rounded-2xl overflow-hidden group">
-                <a href="https://www.youtube.com/watch?v=7h2-TqfR7pI" target="_blank">
-                    <img src="https://img.youtube.com/vi/7h2-TqfR7pI/hqdefault.jpg" class="w-full aspect-video object-cover">
-                    <div class="p-6">
-                        <h4 class="font-bold text-lg mb-2 group-hover:text-[#b8860b] transition">අභිධර්මයේ එන සිත සහ චෛතසික පිළිබඳ හැඳින්වීම</h4>
-                        <p class="text-gray-500 text-sm italic">අභිධම්ම දහර</p>
-                    </div>
-                </a>
-            </div>
+            <script>
+                const videoData = [
+                    {id: '7h2-TqfR7pI', title: 'අභිධර්මයේ එන සිත සහ චෛතසික පිළිබඳ හැඳින්වීම'},
+                    {id: 'ScMzIvxBSi4', title: 'ධර්ම දේශනා සහ අභිධර්ම පාඩම් මාලා එකතුව'},
+                    {id: 'F3zW6C0L6g8', title: 'සංසාර චක්‍රය සහ චතුරාර්ය සත්‍යය පිළිබඳ විග්‍රහය'},
+                    {id: 'D-K8-K0uJ7c', title: 'අභිධර්ම පාඩම් මාලාව - 01 වන කොටස'},
+                    {id: '6m82X7v875M', title: 'භාවනා සහ මනස සන්සුන් කිරීමේ නිවැරදි ක්‍රමය'},
+                    {id: '3-7hE0XvX_Y', title: 'විශේෂ ධර්ම සාකච්ඡා සහ ගැටළු විසඳීම'}
+                ];
 
-            <div class="video-card rounded-2xl overflow-hidden group">
-                <a href="https://www.youtube.com/watch?v=ScMzIvxBSi4" target="_blank">
-                    <img src="https://img.youtube.com/vi/ScMzIvxBSi4/hqdefault.jpg" class="w-full aspect-video object-cover">
-                    <div class="p-6">
-                        <h4 class="font-bold text-lg mb-2 group-hover:text-[#b8860b] transition">ධර්ම දේශනා සහ අභිධර්ම පාඩම් මාලා</h4>
-                        <p class="text-gray-500 text-sm italic">අභිධම්ම දහර</p>
+                document.write(videoData.map(v => `
+                    <div class="video-card rounded-3xl overflow-hidden shadow-sm group">
+                        <a href="https://www.youtube.com/watch?v=${v.id}" target="_blank">
+                            <div class="relative overflow-hidden">
+                                <img src="https://img.youtube.com/vi/${v.id}/hqdefault.jpg" class="w-full aspect-video object-cover transition duration-700 group-hover:scale-110">
+                                <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent opacity-0 group-hover:opacity-100 transition-all duration-500 flex items-center justify-center">
+                                    <div class="w-16 h-16 rounded-full bg-white/20 backdrop-blur-md flex items-center justify-center border border-white/40">
+                                        <svg class="w-8 h-8 text-white fill-current" viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="p-8">
+                                <div class="flex items-center gap-2 mb-3">
+                                    <span class="w-8 h-[1px] bg-gold"></span>
+                                    <span class="text-[10px] text-gold font-bold uppercase tracking-widest">Dhamma Deshana</span>
+                                </div>
+                                <h4 class="font-bold text-xl text-[#2d0a0a] group-hover:text-gold transition-colors leading-tight h-14 overflow-hidden mb-4">${v.title}</h4>
+                                <div class="flex justify-between items-center pt-4 border-t border-gray-100">
+                                    <span class="text-xs text-gray-400">අභිධම්ම දහර Official</span>
+                                    <span class="text-gold font-bold text-xs uppercase">Watch Now</span>
+                                </div>
+                            </div>
+                        </a>
                     </div>
-                </a>
-            </div>
+                `).join(''));
+            </script>
+        </div>
+    </main>
 
-            <div class
+    <footer class="bg-[#1a0808] text-white py-24 px-6 border-t-[10px] border-[#c5a059]">
+        <div class="container mx-auto max-w-5xl">
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-16 mb-16">
+                <div>
+                    <h2 class="text-3xl font-bold mb-6 tracking-tighter">අභිධම්ම දහර</h2>
+                    <p class="text-gray-400 leading-relaxed text-lg">
+                        පරම පවිත්‍ර ශ්‍රී සද්ධර්මය ලෝකවාසී සැදැහැවතුන් අතරේ ප්‍රචලිත කිරීමේ මෙම උදාර පුණ්‍යකර්මයට ඔබත් දායක වන්න. මෙම දේශනා ශ්‍රවණය කිරීමෙන් ඔබ ලබාගන්නා ධර්ම ඥානය නිවන් මග සඳහාම හේතු වේවා!
+                    </p>
+                </div>
+                <div class="flex flex-col md:items-end justify-center">
+                    <p class="text-gold font-bold mb-4 uppercase tracking-[0.3em]">අප සමඟ සම්බන්ධ වන්න</p>
+                    <div class="flex gap-6">
+                        <a href="https://www.youtube.com/channel/UCdwr_BIzFErVpm2Axoi_0yA" class="w-12 h-12 rounded-full border border-white/20 flex items-center justify-center hover:bg-[#c5a059] hover:border-[#c5a059] transition-all">YT</a>
+                        <a href="#" class="w-12 h-12 rounded-full border border-white/20 flex items-center justify-center hover:bg-[#c5a059] hover:border-[#c5a059] transition-all">FB</a>
+                        <a href="#" class="w-12 h-12 rounded-full border border-white/20 flex items-center justify-center hover:bg-[#c5a059] hover:border-[#c5a059] transition-all">WA</a>
+                    </div>
+                </div>
+            </div>
+            <div class="pt-8 border-t border-white/10 text-center">
+                <p class="text-xs text-gray-500 uppercase tracking-[0.5em]">© 2026 ABHIDHAMMA DAHARA | ALL RIGHTS RESERVED</p>
+                <p class="text-[10px] text-gold/40 mt-4">සබ්බේ සත්තා භවන්තු සුඛිතත්තා</p>
+            </div>
+        </div>
+    </footer>
+
+</body>
+</html>
