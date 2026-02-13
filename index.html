@@ -3,147 +3,101 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>අභිධම්ම දහර | Auto Latest Videos</title>
-
+<title>අභිධම්ම දහර | Temple Style Video Site</title>
 <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+Sinhala:wght@400;700&display=swap" rel="stylesheet">
-
 <style>
-body{
-margin:0;
-font-family:"Noto Serif Sinhala", serif;
-background:#f7efe5;
-color:#3b1d1d;
-text-align:center;
-}
-
-/* HEADER */
-.header{
-background:url('https://yt3.googleusercontent.com/Up2xQQgknqKweX21YDErXzvUPac2o2MYfXcUNDihFhnzDG1yvVrFYHNbEu__docHvwDrDIGt=w1707-fcrop64=1,00005a57ffffa5a8-k-c0xffffffff-no-nd-rj') center/cover no-repeat;
-padding:80px 20px;
-color:white;
-position:relative;
-}
-.header::after{
-content:"";
-position:absolute;top:0;left:0;right:0;bottom:0;
-background:rgba(0,0,0,0.6);
-}
-.header-content{
-position:relative;z-index:2;
-}
-.logo{
-width:140px;border-radius:50%;border:5px solid gold;background:white;
-}
-h1{
-font-size:42px;color:gold;text-shadow:2px 2px 6px black;
-margin:15px 0;
-}
-
+body{margin:0;font-family:"Noto Serif Sinhala", serif;background:#f7efe5;color:#3b1d1d;text-align:center;}
+/* HEADER / BANNER */
+.header{background:url('https://yt3.googleusercontent.com/Up2xQQgknqKweX21YDErXzvUPac2o2MYfXcUNDihFhnzDG1yvVrFYHNbEu__docHvwDrDIGt=w1707-fcrop64=1,00005a57ffffa5a8-k-c0xffffffff-no-nd-rj') center/cover no-repeat;padding:80px 20px;color:white;position:relative;}
+.header::after{content:"";position:absolute;top:0;left:0;right:0;bottom:0;background:rgba(0,0,0,0.5);}
+.header-content{position:relative; z-index:2;}
+.logo{width:140px;border-radius:50%;border:5px solid gold;background:white;}
+h1{font-size:42px;margin:15px 0;color:gold;text-shadow:2px 2px 6px black;}
+p{font-size:18px;color:#f5e0b7;margin:0;}
 /* MAIN VIDEO */
-.main-video iframe{
-width:90%;max-width:900px;height:480px;
-border-radius:15px;border:5px solid gold;
-box-shadow:0 12px 25px rgba(0,0,0,0.4);
-margin:30px 0;
-}
-
-/* GALLERY */
-.gallery{
-display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));
-gap:20px;padding:20px;
-}
-.video-card{
-background:white;border-radius:15px;
-box-shadow:0 5px 15px rgba(0,0,0,0.25);
-overflow:hidden;transition:0.3s;
-}
-.video-card:hover{transform:scale(1.05);}
-.video-card img{width:100%;}
-.video-card a{
-display:block;text-decoration:none;color:black;font-weight:bold;
-padding:10px;font-size:16px;text-align:center;
-}
-
+.main-video iframe{width:900px;height:480px;border-radius:15px;border:5px solid gold;box-shadow:0 12px 25px rgba(0,0,0,0.4);margin:30px 0;}
 /* SUBSCRIBE */
-.subscribe-btn{
-display:inline-block;padding:14px 40px;
-background:red;color:white;font-size:22px;
-text-decoration:none;border-radius:30px;margin:20px;
-}
-
+.subscribe-btn{display:inline-block;padding:16px 45px;background:red;color:white;font-size:22px;text-decoration:none;border-radius:35px;margin:20px;box-shadow:0 6px 15px rgba(0,0,0,0.4);transition:0.3s;}
+.subscribe-btn:hover{background:#b00000;transform:scale(1.08);}
+/* VIDEO GALLERY */
+.gallery{display:grid;grid-template-columns:repeat(auto-fit, minmax(200px,1fr));gap:20px;padding:20px;}
+.video-card{background:white;border-radius:15px;box-shadow:0 5px 15px rgba(0,0,0,0.25);overflow:hidden;transition:0.3s;}
+.video-card:hover{transform:scale(1.05);}
+.video-card img{width:100%;height:auto;display:block;}
+.video-card a{display:block;text-decoration:none;color:black;font-weight:bold;padding:10px;font-size:16px;text-align:center;}
 /* FOOTER */
-footer{
-background:#3b1d1d;color:white;padding:15px;margin-top:30px;
-font-size:14px;
-}
+footer{background:#3b1d1d;color:white;padding:15px;margin-top:30px;font-size:14px;}
+/* FLOATING LOTUS */
+.lotus{position:fixed;bottom:30px;right:30px;font-size:60px;opacity:0.2;animation:float 6s infinite ease-in-out;}
+@keyframes float{0%{transform:translateY(0);}50%{transform:translateY(-15px);}100%{transform:translateY(0);}}
 </style>
 </head>
-
 <body>
 
+<!-- HEADER / BANNER -->
 <div class="header">
 <div class="header-content">
-<img class="logo" src="https://yt3.googleusercontent.com/71vDXA4pUEkPWyppKKYcJhklRTilM7AcaHZrKBrxEvVyhNnNLnLRm9D_WgmcO6L5aNVfOD7DhSw=s160-c-k-c0x00ffffff-no-rj">
-<h1>අභිධම්ම දහර</h1>
-<p>බුද්ධ දර්ශනය සහ අභිධර්ම ධර්ම දේශනා</p>
+  <img class="logo" src="https://yt3.googleusercontent.com/71vDXA4pUEkPWyppKKYcJhklRTilM7AcaHZrKBrxEvVyhNnNLnLRm9D_WgmcO6L5aNVfOD7DhSw=s160-c-k-c0x00ffffff-no-rj" alt="Channel Logo">
+  <h1>අභිධම්ම දහර</h1>
+  <p>බුද්ධ දර්ශනය සහ අභිධර්ම ධර්ම දේශනා</p>
 </div>
 </div>
 
+<!-- MAIN VIDEO -->
 <div class="main-video">
 <h2>🎥 Latest Video</h2>
 <iframe id="player" src="" allowfullscreen></iframe>
 </div>
 
-<a class="subscribe-btn" href="https://www.youtube.com/channel/UCdwr_BIzFErVpm2Axoi_0yA" target="_blank">
-🔔 Subscribe on YouTube
-</a>
+<!-- SUBSCRIBE BUTTON -->
+<a class="subscribe-btn" href="https://www.youtube.com/channel/UCdwr_BIzFErVpm2Axoi_0yA" target="_blank">🔔 Subscribe on YouTube</a>
 
+<!-- VIDEO GALLERY -->
 <h2>📺 Video Gallery</h2>
 <div class="gallery" id="gallery"></div>
 
+<!-- FLOATING LOTUS -->
+<div class="lotus">🪷</div>
+
+<!-- FOOTER -->
 <footer>© 2026 Abhidhamma Dahara Official</footer>
 
 <script>
-// ========================
-// CONFIG
-const API_KEY = "YOUR_API_KEY_HERE";
-const CHANNEL_ID = "UCdwr_BIzFErVpm2Axoi_0yA";
-const MAX_RESULTS = 20;
+// ===================
+// VIDEO LIST (manual, add your own IDs)
+const videos = [
+  "B1z2XBA1jd0",
+  "dId_6ap1kMQ",
+  "TLzYGITUarw",
+  "AkI7NcDdVhI",
+  "ENs-SnNn7jA",
+  "sgJu7EFf0sc",
+  "DDmyUq1VBeY",
+  "7gptEiV0DCA",
+  "KzAASDcIpW4",
+  "BEvtcUNmOTE",
+  "jcm_FyCAqq4"
+];
 
-// ========================
-const gallery = document.getElementById("gallery");
-const player = document.getElementById("player");
+window.addEventListener('DOMContentLoaded', () => {
+  const gallery = document.getElementById("gallery");
+  const player = document.getElementById("player");
 
-// Fetch Latest Videos
-fetch(`https://www.googleapis.com/youtube/v3/search?key=${API_KEY}&channelId=${CHANNEL_ID}&part=snippet,id&order=date&maxResults=${MAX_RESULTS}`)
-.then(res => res.json())
-.then(data => {
-  const items = data.items;
-  if (items.length > 0) {
-    // Show first
-    const firstId = items[0].id.videoId;
-    player.src = "https://www.youtube.com/embed/" + firstId;
+  // generate gallery thumbnails
+  videos.forEach(id => {
+    const card = document.createElement("div");
+    card.className = "video-card";
+    card.innerHTML = `<a href="#" onclick="playVideo('${id}')"><img src="https://img.youtube.com/vi/${id}/hqdefault.jpg">Video</a>`;
+    gallery.appendChild(card);
+  });
 
-    // Gallery
-    items.forEach(item => {
-      const vid = item.id.videoId;
-      const title = item.snippet.title;
-      const thumb = item.snippet.thumbnails.high.url;
-
-      const div = document.createElement("div");
-      div.className = "video-card";
-      div.innerHTML = `
-        <a href="#" onclick="play('${vid}')">
-          <img src="${thumb}">
-          ${title}
-        </a>`;
-      gallery.appendChild(div);
-    });
-  }
+  // first video default
+  player.src = "https://www.youtube.com/embed/" + videos[0];
 });
 
-function play(id){
-  player.src = "https://www.youtube.com/embed/" + id;
+// click thumbnail → main video replace
+function playVideo(id){
+  document.getElementById("player").src = "https://www.youtube.com/embed/" + id;
 }
 </script>
 
