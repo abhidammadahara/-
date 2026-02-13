@@ -3,49 +3,121 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>අභිධම්ම දහර</title>
+    <title>අභිධම්ම දහර | Official Website</title>
     <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+Sinhala:wght@400;700&display=swap" rel="stylesheet">
     <style>
-        body { background-color: #1a1a1a; color: #f4f4f4; font-family: sans-serif; }
-        .gold-text { color: #d4af37; }
-        .video-card { background: #262626; border-radius: 12px; overflow: hidden; border: 1px solid #333; transition: 0.3s; }
-        .video-card:hover { transform: scale(1.02); border-color: #d4af37; }
+        :root { --gold: #c5a059; --deep: #1a0a0a; }
+        body { font-family: 'Noto Sans Sinhala', sans-serif; background-color: #f9f7f2; color: #333; }
+        
+        /* Banner Section - Inspired by your channel */
+        .channel-banner {
+            background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), 
+                        url('https://images1-focus-opensocial.googleusercontent.com/gadgets/proxy?container=focus&url=https://i.ytimg.com/vi/7h2-TqfR7pI/maxresdefault.jpg');
+            background-size: cover; background-position: center; min-height: 400px;
+            display: flex; align-items: center; justify-content: center; border-bottom: 6px solid var(--gold);
+        }
+
+        .video-card {
+            background: white; border-radius: 18px; overflow: hidden;
+            transition: 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            border: 1px solid #eaddca; height: 100%;
+        }
+
+        .video-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 20px 40px rgba(197, 160, 89, 0.3);
+            border-color: var(--gold);
+        }
+
+        .gold-btn {
+            background: linear-gradient(135deg, #c5a059, #8e6d2d);
+            transition: 0.3s;
+        }
     </style>
 </head>
-<body class="p-4 md:p-10">
-    <header class="text-center mb-10">
-        <h1 class="text-4xl font-bold gold-text">අභිධම්ම දහර</h1>
-        <p class="text-gray-400 mt-2 italic">සබ්බ දානං ධම්ම දානං ජිනාති</p>
+<body>
+
+    <nav class="bg-white/95 backdrop-blur-md sticky top-0 z-50 border-b border-gold/20 p-4 shadow-sm">
+        <div class="container mx-auto flex justify-between items-center">
+            <div class="flex items-center gap-4">
+                <div class="w-14 h-14 bg-gradient-to-br from-[#c5a059] to-[#8e6d2d] rounded-full flex items-center justify-center text-white font-bold text-2xl shadow-lg border-2 border-white">
+                    අ
+                </div>
+                <div>
+                    <h1 class="text-2xl font-bold text-[#1a0a0a] tracking-tighter">අභිධම්ම දහර</h1>
+                    <p class="text-[10px] uppercase tracking-[0.3em] text-[#c5a059] font-bold italic">Abhidhamma Dahara</p>
+                </div>
+            </div>
+            <a href="https://www.youtube.com/channel/UCdwr_BIzFErVpm2Axoi_0yA?sub_confirmation=1" target="_blank" 
+               class="gold-btn text-white px-8 py-2.5 rounded-full font-bold text-sm shadow-md hover:scale-105 transition uppercase">Subscribe</a>
+        </div>
+    </nav>
+
+    <header class="channel-banner text-center text-white px-6 shadow-inner">
+        <div class="max-w-4xl">
+            <h2 class="text-5xl md:text-8xl font-bold mb-6 tracking-tight drop-shadow-2xl">අභිධම්ම දහර</h2>
+            <div class="h-1.5 w-40 bg-[#c5a059] mx-auto mb-8 rounded-full"></div>
+            <p class="text-xl md:text-3xl italic text-orange-50 font-light leading-relaxed">"සියලු දානයන්ට වඩා ධර්ම දානය උතුම් වන්නේය"</p>
+        </div>
     </header>
 
-    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 max-w-6xl mx-auto">
-        <script>
-            const vids = [
-                {id: '7h2-TqfR7pI', t: 'අභිධර්ම පාඩම් මාලාව'},
-                {id: 'ScMzIvxBSi4', t: 'ධර්ම දේශනා එකතුව'},
-                {id: 'F3zW6C0L6g8', t: 'විශේෂ ධර්ම සාකච්ඡා'}
-            ];
+    <main class="container mx-auto px-6 py-20">
+        <div class="text-center mb-16">
+            <h3 class="text-3xl font-bold text-[#1a0a0a]">නවතම ධර්ම දේශනා</h3>
+            <div class="w-20 h-1 bg-[#c5a059] mx-auto mt-4"></div>
+        </div>
 
-            vids.forEach(v => {
-                // මේ ලින්ක් එක පාවිච්චි කරහම අනිවාර්යයෙන්ම Thumbnail පේනවා
-                const thumb = `https://img.youtube.com/vi/${v.id}/0.jpg`;
-                document.write(`
-                    <div class="video-card">
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-12" id="v-grid">
+            <script>
+                const videos = [
+                    {id: '7h2-TqfR7pI', title: 'අභිධර්මයේ එන සිත සහ චෛතසික පිළිබඳ හැඳින්වීම'},
+                    {id: 'ScMzIvxBSi4', title: 'ධර්ම දේශනා සහ අභිධර්ම පාඩම් මාලා එකතුව'},
+                    {id: 'F3zW6C0L6g8', title: 'සංසාර චක්‍රය සහ චතුරාර්ය සත්‍යය විග්‍රහය'},
+                    {id: 'D-K8-K0uJ7c', title: 'අභිධර්ම පාඩම් මාලාව - 01 වන කොටස'},
+                    {id: '6m82X7v875M', title: 'භාවනා සහ මනස සන්සුන් කිරීමේ නිවැරදි ක්‍රමය'},
+                    {id: '3-7hE0XvX_Y', title: 'විශේෂ ධර්ම සාකච්ඡා සහ ගැටළු විසඳීම'},
+                    {id: 'W_I7v0X3k4M', title: 'සිත දමනය කරගන්නා ආකාරය - ධර්ම දේශනාව'},
+                    {id: 'L-m2X8v0Z1A', title: 'පටිච්චසමුප්පාදය සරලව ඉගෙන ගනිමු'},
+                    {id: 'B-k4V1x9C0Q', title: 'නිවන් මගට පිවිසෙන්නේ කෙසේද?'}
+                ];
+
+                const grid = document.getElementById('v-grid');
+                videos.forEach(v => {
+                    // Google Proxy ensures images ALWAYS show up
+                    const secureImg = `https://images1-focus-opensocial.googleusercontent.com/gadgets/proxy?container=focus&refresh=2592000&url=https://i.ytimg.com/vi/${v.id}/hqdefault.jpg`;
+                    
+                    grid.innerHTML += `
+                    <div class="video-card group">
                         <a href="https://www.youtube.com/watch?v=${v.id}" target="_blank">
-                            <img src="${thumb}" class="w-full aspect-video object-cover" loading="lazy">
-                            <div class="p-4">
-                                <h3 class="font-bold text-lg">${v.t}</h3>
-                                <p class="text-sm text-yellow-600 mt-2 font-bold uppercase">දැන් නරඹන්න →</p>
+                            <div class="relative overflow-hidden aspect-video">
+                                <img src="${secureImg}" class="w-full h-full object-cover transition duration-700 group-hover:scale-110" referrerpolicy="no-referrer">
+                                <div class="absolute inset-0 bg-black/10 group-hover:bg-transparent transition"></div>
+                            </div>
+                            <div class="p-8">
+                                <h4 class="font-bold text-lg text-[#1a0a0a] group-hover:text-[#c5a059] transition-colors leading-snug h-14 overflow-hidden mb-6">${v.title}</h4>
+                                <div class="flex justify-between items-center pt-4 border-t border-gray-100">
+                                    <span class="text-[10px] text-gray-400 font-bold uppercase tracking-widest">Dhamma Dahara</span>
+                                    <span class="text-[#c5a059] font-bold text-xs">WATCH NOW →</span>
+                                </div>
                             </div>
                         </a>
-                    </div>
-                `);
-            });
-        </script>
-    </div>
+                    </div>`;
+                });
+            </script>
+        </div>
+    </main>
 
-    <footer class="mt-20 text-center text-gray-500 text-xs">
-        © 2026 Abhidhamma Dahara Official
+    <footer class="bg-[#1a0a0a] text-white py-24 text-center border-t-[10px] border-[#c5a059]">
+        <div class="w-20 h-20 bg-white rounded-full flex items-center justify-center mx-auto mb-8 shadow-2xl border-4 border-[#c5a059]">
+             <span class="text-[#8e6d2d] font-bold text-3xl">අ</span>
+        </div>
+        <h2 class="text-3xl font-bold text-[#c5a059] mb-4">අභිධම්ම දහර</h2>
+        <p class="text-gray-400 text-sm max-w-md mx-auto mb-10 px-6 leading-relaxed">
+            පරම පවිත්‍ර ශ්‍රී සද්ධර්මය ලෝකවාසී සැදැහැවතුන් අතරේ ප්‍රචලිත කිරීම අපගේ අරමුණයි.
+        </p>
+        <div class="text-[10px] opacity-30 uppercase tracking-[0.5em]">© 2026 Abhidhamma Dahara Official | All Rights Reserved</div>
     </footer>
+
 </body>
 </html>
