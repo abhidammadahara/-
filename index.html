@@ -3,42 +3,58 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>අභිධම්ම දහර</title>
+    <title>අභිධම්ම දහර | Abhidhamma Dahara</title>
     <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+Sinhala:wght@400;700&display=swap" rel="stylesheet">
     <style>
-        body { background-color: #f9f6f0; font-family: sans-serif; }
-        .video-card { background: white; border-radius: 15px; overflow: hidden; box-shadow: 0 4px 15px rgba(0,0,0,0.1); }
-        .gold-text { color: #c5a059; }
+        body { background-color: #fdfbf7; font-family: 'Noto Sans Sinhala', sans-serif; }
+        .video-card { transition: 0.3s; border: 1px solid #eaddca; background: white; }
+        .video-card:hover { transform: translateY(-5px); box-shadow: 0 10px 20px rgba(184,134,11,0.2); }
+        .gold-text { color: #b8860b; }
     </style>
 </head>
 <body>
-    <nav class="bg-white p-4 shadow-md text-center">
-        <h1 class="text-2xl font-bold gold-text">අභිධම්ම දහර</h1>
+
+    <nav class="bg-white border-b border-[#eaddca] p-4 sticky top-0 z-50 shadow-sm">
+        <div class="container mx-auto flex justify-between items-center">
+            <h1 class="text-2xl font-bold gold-text uppercase">අභිධම්ම දහර</h1>
+            <a href="https://www.youtube.com/channel/UCdwr_BIzFErVpm2Axoi_0yA?sub_confirmation=1" target="_blank" class="bg-[#b8860b] text-white px-5 py-2 rounded-full font-bold text-sm">SUBSCRIBE</a>
+        </div>
     </nav>
 
-    <div class="container mx-auto p-6 grid grid-cols-1 md:grid-cols-3 gap-8">
-        
-        <div class="video-card">
-            <a href="https://www.youtube.com/watch?v=7h2-TqfR7pI" target="_blank">
-                <img src="https://i3.ytimg.com/vi/7h2-TqfR7pI/hqdefault.jpg" class="w-full">
-                <div class="p-4"><h4 class="font-bold">අභිධර්මයේ එන සිත සහ චෛතසික</h4></div>
-            </a>
-        </div>
+    <main class="container mx-auto px-6 py-12">
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+            
+            <script>
+                const videoList = [
+                    {id: '7h2-TqfR7pI', title: 'අභිධර්මයේ එන සිත සහ චෛතසික'},
+                    {id: 'ScMzIvxBSi4', title: 'ධර්ම දේශනා සහ පාඩම් මාලා'},
+                    {id: 'F3zW6C0L6g8', title: 'විශේෂ ධර්ම දේශනා එකතුව'}
+                ];
 
-        <div class="video-card">
-            <a href="https://www.youtube.com/watch?v=ScMzIvxBSi4" target="_blank">
-                <img src="https://i3.ytimg.com/vi/ScMzIvxBSi4/hqdefault.jpg" class="w-full">
-                <div class="p-4"><h4 class="font-bold">ධර්ම දේශනා සහ පාඩම් මාලා</h4></div>
-            </a>
-        </div>
+                document.write(videoList.map(v => `
+                    <div class="video-card rounded-2xl overflow-hidden shadow-sm">
+                        <a href="https://www.youtube.com/watch?v=${v.id}" target="_blank">
+                            <img 
+                                src="https://i.ytimg.com/vi/${v.id}/hqdefault.jpg" 
+                                onerror="this.src='https://img.youtube.com/vi/${v.id}/mqdefault.jpg'"
+                                class="w-full aspect-video object-cover"
+                            >
+                            <div class="p-5">
+                                <h4 class="font-bold text-gray-800 mb-4 h-12 overflow-hidden">${v.title}</h4>
+                                <span class="text-[#b8860b] text-xs font-bold uppercase">දැන් නරඹන්න →</span>
+                            </div>
+                        </a>
+                    </div>
+                `).join(''));
+            </script>
 
-        <div class="video-card">
-            <a href="https://www.youtube.com/watch?v=F3zW6C0L6g8" target="_blank">
-                <img src="https://i3.ytimg.com/vi/F3zW6C0L6g8/hqdefault.jpg" class="w-full">
-                <div class="p-4"><h4 class="font-bold">විශේෂ ධර්ම දේශනා</h4></div>
-            </a>
         </div>
+    </main>
 
-    </div>
+    <footer class="text-center py-10 border-t border-[#eaddca] text-gray-400 text-sm">
+        © 2026 අභිධම්ම දහර | සියලු සත්වයෝ සුවපත් වෙත්වා!
+    </footer>
+
 </body>
 </html>
