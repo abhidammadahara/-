@@ -3,80 +3,42 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>අභිධම්ම දහර | Abhidhamma Dahara</title>
+    <title>අභිධම්ම දහර</title>
     <script src="https://cdn.tailwindcss.com"></script>
-    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+Sinhala:wght@100;400;700&display=swap" rel="stylesheet">
     <style>
-        :root { --gold: #c5a059; --soft-cream: #f9f6f0; }
-        body { font-family: 'Noto Sans Sinhala', sans-serif; background-color: var(--soft-cream); }
-        .hero {
-            background: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)), 
-                        url('https://i.ytimg.com/vi/7h2-TqfR7pI/hqdefault.jpg');
-            background-size: cover;
-            background-position: center;
-            background-attachment: fixed;
-            min-height: 60vh;
-        }
-        .video-card { background: white; transition: 0.4s; border-bottom: 4px solid transparent; }
-        .video-card:hover { border-bottom: 4px solid var(--gold); transform: translateY(-10px); box-shadow: 0 20px 40px rgba(197, 160, 89, 0.2); }
+        body { background-color: #f9f6f0; font-family: sans-serif; }
+        .video-card { background: white; border-radius: 15px; overflow: hidden; box-shadow: 0 4px 15px rgba(0,0,0,0.1); }
+        .gold-text { color: #c5a059; }
     </style>
 </head>
 <body>
-
-    <nav class="bg-white/90 backdrop-blur-lg border-b border-[#eaddca] sticky top-0 z-50">
-        <div class="container mx-auto px-6 py-4 flex justify-between items-center">
-            <div class="flex items-center gap-4">
-                <div class="w-12 h-12 bg-gradient-to-br from-[#c5a059] to-[#8e6d2d] rounded-full flex items-center justify-center font-bold text-xl text-white shadow-lg">අ</div>
-                <h1 class="text-2xl font-bold tracking-tighter text-[#2d0a0a]">අභිධම්ම දහර</h1>
-            </div>
-            <a href="https://www.youtube.com/channel/UCdwr_BIzFErVpm2Axoi_0yA?sub_confirmation=1" target="_blank" class="bg-[#c5a059] text-white px-6 py-2 rounded-full font-bold text-sm shadow-md hover:brightness-110 transition">SUBSCRIBE</a>
-        </div>
+    <nav class="bg-white p-4 shadow-md text-center">
+        <h1 class="text-2xl font-bold gold-text">අභිධම්ම දහර</h1>
     </nav>
 
-    <header class="hero flex items-center justify-center text-center px-4 relative">
-        <div class="relative z-10">
-            <h2 class="text-white text-5xl md:text-7xl font-bold mb-4 drop-shadow-2xl">අභිධම්ම දහර</h2>
-            <p class="text-orange-100 text-lg md:text-2xl italic leading-relaxed">"ධර්ම දානය සියලු දානයන්ට වඩා උතුම් වන්නේය"</p>
-        </div>
-    </header>
-
-    <main class="container mx-auto px-6 py-20">
-        <h3 class="text-3xl font-bold text-center mb-16 text-[#2d0a0a]">ධර්ම දේශනා සහ පාඩම් මාලා</h3>
+    <div class="container mx-auto p-6 grid grid-cols-1 md:grid-cols-3 gap-8">
         
-        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10">
-            <script>
-                const videoData = [
-                    {id: '7h2-TqfR7pI', title: 'අභිධර්මයේ එන සිත සහ චෛතසික පිළිබඳ හැඳින්වීම'},
-                    {id: 'ScMzIvxBSi4', title: 'ධර්ම දේශනා සහ අභිධර්ම පාඩම් මාලා එකතුව'},
-                    {id: 'F3zW6C0L6g8', title: 'සංසාර චක්‍රය සහ චතුරාර්ය සත්‍යය පිළිබඳ විග්‍රහය'},
-                    {id: 'D-K8-K0uJ7c', title: 'අභිධර්ම පාඩම් මාලාව - 01 වන කොටස'},
-                    {id: '6m82X7v875M', title: 'භාවනා සහ මනස සන්සුන් කිරීමේ නිවැරදි ක්‍රමය'},
-                    {id: '3-7hE0XvX_Y', title: 'විශේෂ ධර්ම සාකච්ඡා සහ ගැටළු විසඳීම'}
-                ];
-
-                document.write(videoData.map(v => `
-                    <div class="video-card rounded-2xl overflow-hidden shadow-sm">
-                        <a href="https://www.youtube.com/watch?v=${v.id}" target="_blank">
-                            <img src="https://i.ytimg.com/vi/${v.id}/hqdefault.jpg" class="w-full aspect-video object-cover" loading="lazy">
-                            <div class="p-6">
-                                <h4 class="font-bold text-lg text-[#2d0a0a] leading-tight h-14 overflow-hidden mb-4">${v.title}</h4>
-                                <div class="flex justify-between items-center border-t pt-4">
-                                    <span class="text-xs text-gray-400">අභිධම්ම දහර</span>
-                                    <span class="text-[#c5a059] font-bold text-xs uppercase">Watch Now</span>
-                                </div>
-                            </div>
-                        </a>
-                    </div>
-                `).join(''));
-            </script>
+        <div class="video-card">
+            <a href="https://www.youtube.com/watch?v=7h2-TqfR7pI" target="_blank">
+                <img src="https://i3.ytimg.com/vi/7h2-TqfR7pI/hqdefault.jpg" class="w-full">
+                <div class="p-4"><h4 class="font-bold">අභිධර්මයේ එන සිත සහ චෛතසික</h4></div>
+            </a>
         </div>
-    </main>
 
-    <footer class="bg-[#1a0808] text-white py-16 px-6 text-center border-t-8 border-[#c5a059]">
-        <h2 class="text-2xl font-bold mb-4 text-[#c5a059]">අභිධම්ම දහර</h2>
-        <p class="text-gray-400 text-sm max-w-lg mx-auto mb-8">පරම පවිත්‍ර ශ්‍රී සද්ධර්මය ලෝකවාසී සැදැහැවතුන් අතරේ ප්‍රචලිත කිරීම අපගේ අරමුණයි.</p>
-        <p class="text-[10px] tracking-[0.4em] opacity-50 uppercase">© 2026 ABHIDHAMMA DAHARA</p>
-    </footer>
+        <div class="video-card">
+            <a href="https://www.youtube.com/watch?v=ScMzIvxBSi4" target="_blank">
+                <img src="https://i3.ytimg.com/vi/ScMzIvxBSi4/hqdefault.jpg" class="w-full">
+                <div class="p-4"><h4 class="font-bold">ධර්ම දේශනා සහ පාඩම් මාලා</h4></div>
+            </a>
+        </div>
 
+        <div class="video-card">
+            <a href="https://www.youtube.com/watch?v=F3zW6C0L6g8" target="_blank">
+                <img src="https://i3.ytimg.com/vi/F3zW6C0L6g8/hqdefault.jpg" class="w-full">
+                <div class="p-4"><h4 class="font-bold">විශේෂ ධර්ම දේශනා</h4></div>
+            </a>
+        </div>
+
+    </div>
 </body>
 </html>
